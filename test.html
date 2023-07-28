@@ -7,6 +7,7 @@
 </head>
 <body>
 <button type="button" id="btn" onclick="openApp()">앱 열기</button>
+<div id="div-console"></div>
 
 <script>
 const urls = [
@@ -19,7 +20,7 @@ function openApp() {
   let i = 0;
   let j = 0;
   const schInterval = setInterval(() => {
-    console.log(urls[i] + "," + i + "," + j);
+    divConsoleLog(urls[i] + "," + i + "," + j);
 
     if (j === 0) {
         location.href = urls[i];
@@ -37,6 +38,11 @@ function openApp() {
       j++;
     }
   }, 400);
+}
+
+function divConsoleLog(txt) {
+  const div =   document.getElementById('div-console');
+  div.insertAdjacentHTML("afterend", txt);
 }
 
 /*
