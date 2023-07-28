@@ -27,7 +27,7 @@ function openApp() {
 
     if (document.webkitHidden || document.hidden) {
       clearInterval(schInterval);
-      console.log("앱이 설치 되어 있습니다.");
+      alert("앱이 설치 되어 있습니다.");
     } else if (i === urls.length - 1 && j === 4) {
       clearInterval(schInterval);
     } else if (j === 4) {
