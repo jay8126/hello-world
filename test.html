@@ -48,6 +48,7 @@
       function openApp() {
         let i = 0;
         let j = 0;
+        const delay = 100, times = 5;
         const schInterval = setInterval(() => {
           divConsoleLog(urls[i] + "," + i + "," + j);
 
@@ -58,15 +59,15 @@
           if (document.webkitHidden || document.hidden) {
             clearInterval(schInterval);
             alert("앱이 설치 되어 있습니다.");
-          } else if (i === urls.length - 1 && j === 4) {
+          } else if (i === urls.length - 1 && j === times) {
             clearInterval(schInterval);
-          } else if (j === 4) {
+          } else if (j === times) {
             i++;
             j = 0;
           } else {
             j++;
           }
-        }, 100);
+        }, delay);
       }
 
       function divConsoleLog(txt) {
