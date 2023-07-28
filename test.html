@@ -1,10 +1,53 @@
+<!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
 </head>
 <body>
-    <button type="button" id="btn">이동</button>
-    <script>
+<button type="button" id="btn" onclick="openApp()">앱 열기</button>
 
-    </script>
+<script>
+const urls = [
+  "com.samsungcard.sbluevery://sbluevery",
+  "com.samsungcard.hwbluevery://hwbluevery",
+  "com.samsungcard.pbluevery://pbluevery"
+];
+
+function openApp() {
+  let i = 0;
+  let j = 0;
+  const schInterval = setInterval(() => {
+    console.log(urls[i] + "," + i + "," + j);
+
+    if (j === 0) {
+        location.href = urls[i];
+    }
+
+    if (document.webkitHidden || document.hidden) {
+      clearInterval(schInterval);
+      console.log("앱이 설치 되어 있습니다.");
+    } else if (i === urls.length - 1 && j === 4) {
+      clearInterval(schInterval);
+    } else if (j === 4) {
+      i++;
+      j = 0;
+    } else {
+      j++;
+    }
+  }, 400);
+}
+
+/*
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("btn").addEventListener("click", () => {
+    openApp();
+  });
+});
+*/
+
+    
+</script>
 </body>
 </html>
