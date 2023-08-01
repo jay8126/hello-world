@@ -40,16 +40,18 @@
     </div>
     <script>
       let urls = [
-        "com.samsungcard.sbluevery://sbluevery",
-        "com.samsungcard.hwbluevery://hwbluevery",
-        "com.samsungcard.pbluevery://pbluevery"
+        "com.samsungcard.sbluevery://sbluevery?url=/mypage/home/PFLBMP13C001.do",
+        "com.samsungcard.hwbluevery://hwbluevery?url=/mypage/home/PFLBMP13C001.do",
+        "com.samsungcard.pbluevery://pbluevery?url=/mypage/home/PFLBMP13C001.do"
       ];
 
       const os = checkMobile();
       alert(os);
 
       if (os === 'ios') {
-        urls = ["sbluevery://", "hwbluevery://", "pbluevery://"]
+        urls = ["sbluevery://?url=/mypage/home/PFLBMP13C001.do", 
+        "hwbluevery://?url=/mypage/home/PFLBMP13C001.do",
+         "pbluevery://?url=/mypage/home/PFLBMP13C001.do"]
       }
 
       function openApp() {
