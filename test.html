@@ -52,7 +52,7 @@ urls =["sbluevery://", "hwbluevery://" , "pbluevery://"]
       function openApp() {
         let i = 0;
         let j = 0;
-        const delay = 100, times = 5;
+        const delay = 300, times = 5;
         const schInterval = setInterval(() => {
           divConsoleLog(urls[i] + "," + i + "," + j);
 
@@ -81,7 +81,7 @@ urls =["sbluevery://", "hwbluevery://" , "pbluevery://"]
 
       function checkMobile(){
         
-        var varUA = navigator.userAgent.toLowerCase(); //userAgent 값 얻기
+        const varUA = navigator.userAgent.toLowerCase(); //userAgent 값 얻기
 
         if ( varUA.indexOf('android') > -1) {
             //안드로이드
